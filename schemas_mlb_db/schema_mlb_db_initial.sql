@@ -1,0 +1,68 @@
+CREATE TABLE winslosses(
+
+   Team_Key      INTEGER  NOT NULL PRIMARY KEY 
+  ,Team_LongName VARCHAR(20) NOT NULL
+  ,W             INTEGER  NOT NULL
+  ,L             INTEGER  NOT NULL
+  ,PCT           NUMERIC(5,3) NOT NULL
+  ,GB            VARCHAR(4) NOT NULL
+  ,HOME          VARCHAR(5) NOT NULL
+  ,AWAY          VARCHAR(5) NOT NULL
+  ,RS            INTEGER  NOT NULL
+  ,RA            INTEGER  NOT NULL
+  ,DIFF          INTEGER  NOT NULL
+);
+
+CREATE TABLE attendance(
+
+   Team_Key  INTEGER  NOT NULL PRIMARY KEY 
+  ,Team_Abrv VARCHAR(12) NOT NULL
+  ,GMS_H     INTEGER  NOT NULL
+  ,TOTAL_H   VARCHAR(9) NOT NULL
+  ,AVG_H     VARCHAR(6) NOT NULL
+  ,PCT_H     BIT  NOT NULL
+  ,GMS_R     INTEGER  NOT NULL
+  ,AVG_R     VARCHAR(6) NOT NULL
+  ,PCT_R     BIT  NOT NULL
+  ,GMS_T     INTEGER  NOT NULL
+  ,AVG_T     VARCHAR(6) NOT NULL
+  ,PCT_T     BIT  NOT NULL
+);
+
+
+CREATE TABLE revenue(
+
+   Team_Key      INTEGER  NOT NULL PRIMARY KEY 
+  ,Team_LongName VARCHAR(20) NOT NULL
+  ,Revenue  INTEGER  NOT NULL
+);
+
+
+CREATE TABLE payroll (
+  
+    Team_Key	INTEGER  NOT NULL PRIMARY KEY ,
+    Team_LongName	VARCHAR(20) NOT NULL,
+    Payroll_OpeningDay  NUMERIC(6,2)
+);
+
+CREATE TABLE looktable(
+
+   Team_Key       INTEGER  NOT NULL PRIMARY KEY 
+  ,Team_LongName  VARCHAR(19) NOT NULL
+  ,Team_CityName  VARCHAR(11) NOT NULL
+  ,Team_Abrv      VARCHAR(12) NOT NULL
+  ,Team_ShortName VARCHAR(9) NOT NULL
+);
+
+
+CREATE TABLE salary(
+  
+   Team_Key       INTEGER  NOT NULL PRIMARY KEY 
+  ,RANK           INTEGER  NOT NULL
+  ,Team_ShortName VARCHAR(9) NOT NULL
+  ,OPENING_DAY    INTEGER  NOT NULL
+  ,CURRENT        INTEGER  NOT NULL
+  ,DIFF           VARCHAR(2) NOT NULL
+  ,AVG_SALARY     INTEGER  NOT NULL
+  ,MEDIAN         INTEGER  NOT NULL
+);
